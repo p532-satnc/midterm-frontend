@@ -28,7 +28,7 @@ function saveQuestion() {
     console.log("Sending Question Data:", JSON.stringify(questionData));
 
 
-    fetch("http://localhost:8080/questions", {
+    fetch("https://demo-latest-a4zm.onrender.com/questions", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(questionData)
@@ -71,7 +71,7 @@ function saveQuiz() {
 
     console.log("Quiz Data to be sent:", quizData);
 
-    fetch("http://localhost:8080/quizzes", {
+    fetch("https://demo-latest-a4zm.onrender.com/quizzes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(quizData)
@@ -87,7 +87,7 @@ function saveAndNewQuiz() {
 }
 
 function loadQuestions() {
-fetch("http://localhost:8080/questions")  // GET request to fetch all questions from the backend
+fetch("https://demo-latest-a4zm.onrender.com/questions")  // GET request to fetch all questions from the backend
         .then(response => response.json())
         .then(questions => {
 
@@ -104,7 +104,7 @@ fetch("http://localhost:8080/questions")  // GET request to fetch all questions 
             <p><strong>id:</strong> ${q.id}</p>
             <p><strong>description:</strong> ${q.description}</p>
             <p><strong>choices:</strong> ${q.choices.join(", ")}</p>
-            <img src="http://localhost:8000/${q.imagePath}" alt="Question Image" class="question-image">
+            <img src="https://p532-satnc.github.io/midterm-frontend/${q.imagePath}" alt="Question Image" class="question-image">
             <button onclick="addToQuiz(${q.id})">Add</button>
         `;
         console.log(`Adding question with ID: ${q.id}`);
@@ -119,7 +119,7 @@ fetch("http://localhost:8080/questions")  // GET request to fetch all questions 
 function addToQuiz(id) {
     console.log("Adding question with ID:", id);
     console.log(typeof id);
-    fetch(`http://localhost:8080/questions/${id}`) // GET request to fetch a specific question by ID
+    fetch(`https://demo-latest-a4zm.onrender.com/questions/${id}`) // GET request to fetch a specific question by ID
             .then(response => response.json())
             .then(question => {
 
@@ -145,7 +145,7 @@ function updateSelectedQuestions() {
             <p><strong>id:</strong> ${q.id}</p>
             <p><strong>description:</strong> ${q.description}</p>
             <p><strong>choices:</strong> ${q.choices.join(", ")}</p>
-            <img src="http://localhost:8000/${q.imagePath}" alt="Question Image" class="question-image">
+            <img src="https://p532-satnc.github.io/midterm-frontend/${q.imagePath}" alt="Question Image" class="question-image">
             <button onclick="removeFromQuiz(${q.id})">Remove</button>
         `;
         container.appendChild(card);
@@ -160,7 +160,7 @@ function removeFromQuiz(id) {
 // Load quizzes for the quiz selection page
 function loadQuizzes() {
 
-fetch("http://localhost:8080/quizzes")  // GET request to fetch all quizzes from the backend
+fetch("https://demo-latest-a4zm.onrender.com/quizzes")  // GET request to fetch all quizzes from the backend
         .then(response => response.json())
         .then(quizzes => {
 
@@ -189,7 +189,7 @@ function loadQuiz() {
     console.log(quizId);
     if (!quizId) return;
 
-    fetch(`http://localhost:8080/quizzes/${quizId}`)
+    fetch(`https://demo-latest-a4zm.onrender.com/quizzes/${quizId}`)
             .then(response => response.json())
             .then(quiz => {
     currentQuiz = quiz;
