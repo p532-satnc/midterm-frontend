@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Questions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<nav class="navbar" id="main-navbar">
+    <a href="home.html">Home</a>
+    <a href="add-questions.html">Add Questions</a>
+    <a href="create-quiz.html">Create a Quiz</a>
+    <a href="take-quiz.html">Take a Quiz</a>
+    <a href="about.html">About</a>
+</nav>
+
+<div class="question-form">
+    <h2>Add a New Question</h2>
+    <input type="file" id="question-image" accept="image/*">
+    <input type="text" id="question-text" placeholder="Enter your question">
+    <input type="text" id="choice1" placeholder="Choice 1">
+    <input type="text" id="choice2" placeholder="Choice 2">
+    <input type="text" id="choice3" placeholder="Choice 3">
+    <input type="text" id="Answer" placeholder="Answer">
+    <button onclick="saveQuestion()">Save Question</button>
+</div>
+
+</body>
+</html>

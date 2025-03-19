@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div id="quiz-container">
+    <div id="quiz-content">
+        <h2 id="question-text"></h2>
+        <img id="question-image" src="" alt="">
+        <div id="options"></div>
+    </div>
+    <button id="prev-btn" onclick="prevQuestion()">Previous</button>
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+</div>
+
+<script>
+    window.onload = function() {
+    loadQuiz();
+    };
+</script>
+</body>
+</html>

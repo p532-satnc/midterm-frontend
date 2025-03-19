@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<nav class="navbar" id="main-navbar">
+    <a href="home.html">Home</a>
+    <a href="add-questions.html">Add Questions</a>
+    <a href="create-quiz.html">Create a Quiz</a>
+    <a href="take-quiz.html">Take a Quiz</a>
+    <a href="about.html">About</a>
+</nav>
+
+<div class="quiz-container">
+    <div class="question-bank">
+        <h2>Question Bank</h2>
+        <div class="parent flex-parent" id="questions-list"></div>
+    </div>
+
+    <div class="quiz-builder">
+        <h2>Create a Quiz</h2>
+        <input type="text" id="quiz-title" placeholder="Quiz Title">
+        <div id="selected-questions"></div>
+        <button onclick="saveQuiz()">Save Quiz</button>
+        <button onclick="saveAndNewQuiz()">Save & Start New Quiz</button>
+    </div>
+</div>
+
+<script>
+    window.onload = function() {
+   loadQuestions();
+};
+</script>
+</body>
+</html>
